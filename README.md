@@ -13,7 +13,7 @@
 
 ## Figma
 
-[ACM UCR Website Template Figma Design File](https://www.figma.com/design/S7MLcuwxHX7OIOPof1ppIl/UBI-Winter--26?node-id=0-1&p=f)
+https://www.figma.com/design/S7MLcuwxHX7OIOPof1ppIl/UBI-Winter--26?node-id=0-1&p=f&t=GSc22EVF8SuOHo8S-0
 
 ## Node.js
 
