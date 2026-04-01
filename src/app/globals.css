@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+@theme {
+  --color-ubi-tan: #f7f0dd;
+  --color-ubi-red-100: #da3d2c;
+  --color-ubi-red-200: #e7352f;
+  --color-ubiboard-red-300: #ed4041;
+  --color-ubi-darkred-100: #8e1c1b;
+  --color-ubicalendar-red: #ed4c5c;
+  --color-ubi-lightpink: #f5dfcf;
+  --color-ubi-pink: #ffcdc58a;
+  --color-ubi-white: #ffffff;
+  --color-ubi-blue: #212e6f;
+}
