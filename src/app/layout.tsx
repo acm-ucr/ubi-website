@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Poppins, Volkhov } from "next/font/google";
+import { Poppins } from "next/font/google";
 import { ReactQueryClientProvider } from "@/utils/react-query";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
