@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+@theme {
+  --color-ubi-navy-500: #212E6F;
+  --color-ubi-red-600: #BB2A28;
+  --color-ubi-red-400: #E8322D;
+  --color-ubi-peach-100: #FBDDD0;
+  --color-ubi-cream-100: #FEF8E5;
+
+  --font-ubi-sans: 'Poppins', sans-serif;
+  --font-ubi-serif: 'Volkhov', serif;
+}
