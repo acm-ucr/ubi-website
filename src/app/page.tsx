@@ -1,9 +1,7 @@
-import Example from "@/components/Practice";
-
 const Home = () => {
   return (
     <div className="flex h-screen w-screen items-center justify-center">
-      <Example text1="Change Me!" text2="Click" text3="Props" />
+      Hello World
     </div>
   );
 };
