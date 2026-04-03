@@ -1,7 +1,9 @@
+import Practice from "@/components/Practice";
+
 const Home = () => {
   return (
     <div className="flex h-screen w-screen items-center justify-center">
-      Hello World!
+      <Practice text1="Change Me!" text2="Click" text3="Props" />
     </div>
   );
 };
