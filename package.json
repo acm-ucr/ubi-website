@@ -12,6 +12,8 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@fontsource/poppins": "^5.2.7",
+    "@fontsource/volkhov": "^5.2.8",
     "@tanstack/react-query": "5.69.0",
     "lucide-react": "0.484.0",
     "next": "15.2.4",

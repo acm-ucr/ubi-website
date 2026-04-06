@@ -1,4 +1,6 @@
+@import "@fontsource/poppins";
 @import "tailwindcss";
+@import "@fontsource/volkhov";
 
 @theme {
   --color-ubi-tan: #f7f0dd;
@@ -11,4 +13,9 @@
   --color-ubi-pink: #ffcdc58a;
   --color-ubi-white: #ffffff;
   --color-ubi-blue: #212e6f;
+  --font-volkhov: "Volkhov", serif;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
 }
