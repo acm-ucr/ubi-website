@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import UBILogo from "@/public/UBI_Logo.png";
+import UBILogo from "@/public/UBI_Logo.svg";
 import { navbarLinks } from "@/data/navbarLinks";
 
 const Navbar = () => {
@@ -8,12 +8,10 @@ const Navbar = () => {
     <nav className="bg-ubi-red-100">
       <div className="flex items-center justify-between px-4 text-white">
         <Link href="/" className="flex items-center gap-4">
-          <div className="relative h-12 w-12 rounded-full bg-white">
-            <Image src={UBILogo} alt="logo" fill />
-          </div>
+          <Image src={UBILogo} alt="logo" className="h-15 w-15" />
           <div className="text-2xl">UBI</div>
         </Link>
-        <div className="flex items-center gap-6 p-6 text-2xl">
+        <div className="flex items-center gap-6 py-6 text-2xl">
           {navbarLinks.map(({ link, name }, index) => (
             <Link
               key={index}
