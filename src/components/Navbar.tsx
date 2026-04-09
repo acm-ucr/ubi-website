@@ -11,7 +11,7 @@ const Navbar = () => {
           <Image src={UBILogo} alt="logo" className="h-15 w-15" />
           <div className="text-2xl">UBI</div>
         </Link>
-        <div className="flex items-center gap-6 py-6 text-2xl">
+        <div className="flex items-center gap-6 py-7 text-2xl">
           {navbarLinks.map(({ link, name }, index) => (
             <Link
               key={index}
