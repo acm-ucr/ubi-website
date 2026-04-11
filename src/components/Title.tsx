@@ -1,5 +1,3 @@
-"use client";
-
 type titleProps = {
   text: string;
 };
