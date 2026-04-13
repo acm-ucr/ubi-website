@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import UBILogo from "@/public/img/UBI_Logo.svg";
+import UBILogo from "@/public/assets/UBI_Logo.svg";
 import { navbarLinks } from "@/data/navbarLinks";
 
 const Navbar = () => {
