@@ -1,9 +1,17 @@
 import Title from "@/components/Title";
-
+import Statistics from "@/components/about/Statistics";
 const About = () => {
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <Title text="About Us" />
+      <Statistics
+        donation_num="250+"
+        donation_text="Donations"
+        engage_num="80+"
+        engage_text="Student Engagement"
+        bld_drv_num="10+"
+        bld_drv_text="Blood Drives"
+      />
     </div>
   );
 };
