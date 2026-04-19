@@ -22,12 +22,12 @@ const ErrorMessage = ({ toptext, bottext }: errorProps) => {
         className="absolute top-[28%] left-[76%] w-[37vw] scale-x-[-1] rotate-25"
       />
 
-      <div className="-mt-[2%] flex flex-col items-center text-center font-extrabold">
+      <div className="-mt-8 flex flex-col items-center text-center font-extrabold">
         <p className="text-ubiboard-red-300 text-[13vw]">{toptext}</p>
         <p className="text-ubi-navy text-[3vw]">{bottext}</p>
         <Link
           href="/"
-          className="bg-ubi-lightpink text-ubi-darkred-100 mt-[7%] rounded-3xl px-[6%] pt-[2%] pb-[2%] text-center text-[3vw] drop-shadow-xl transition duration-300 hover:drop-shadow-none"
+          className="bg-ubi-lightpink text-ubi-darkred-100 mt-17 rounded-3xl px-15 pt-5 pb-5 text-center text-[3vw] drop-shadow-xl transition duration-300 hover:drop-shadow-none"
         >
           Go home
         </Link>
