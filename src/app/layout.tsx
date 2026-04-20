@@ -14,7 +14,7 @@ type LayoutProps = {
 export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
-      <body className="">
+      <body className="bg-ubi-tan">
         <ReactQueryClientProvider>
           <Navbar />
           {children}
