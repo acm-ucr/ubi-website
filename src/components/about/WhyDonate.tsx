@@ -5,7 +5,7 @@ import Lifestream from "@/public/assets/Lifestream.svg";
 
 const WhyDonate = () => {
   return (
-    <div className="bg-ubi-pink flex w-3/4 items-center justify-center rounded-2xl px-6 py-12 shadow-xl shadow-black/20">
+    <div className="bg-ubi-pink flex w-4/5 items-center justify-center rounded-2xl px-6 py-12 shadow-xl shadow-black/20">
       <div className="w-3/5 flex-col pr-12">
         <p className="font-volkhov text-ubi-blue mb-4 text-6xl font-bold">
           Why Donate Blood

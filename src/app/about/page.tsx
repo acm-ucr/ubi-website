@@ -14,7 +14,7 @@ const About = () => {
         bld_drv_num="10+"
         bld_drv_text="Blood Drives"
       />
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center py-15">
         <WhyDonate />
       </div>
     </div>
