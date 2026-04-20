@@ -5,12 +5,12 @@ const WhyDonate = () => {
   return (
     <div className="bg-ubi-pink flex w-3/4 items-center justify-center rounded-2xl px-6 py-12 shadow-xl">
       <div className="w-3/5 flex-col pr-12">
-        <h1 className="font-volkhov text-ubi-blue mb-4 text-6xl font-bold">
+        <p className="font-volkhov text-ubi-blue mb-4 text-6xl font-bold">
           Why Donate Blood
-        </h1>
-        <h2 className="text-ubi-red-200 mb-6 text-2xl font-bold">
+        </p>
+        <p className="text-ubi-red-200 mb-6 text-2xl font-bold">
           Powered By University Blood Initiative
-        </h2>
+        </p>
         <p className="text-ubi-blue text-xl">
           Donating blood is one of the simplest ways to save a life, as someone
           in need requires blood every few seconds for trauma care, chronic
