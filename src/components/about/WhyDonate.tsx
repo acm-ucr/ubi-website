@@ -1,17 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
+import UBILogoTransparant from "@/public/assets/UBI_Logo_TranspBG.svg";
+import Lifestream from "@/public/assets/Lifestream.svg";
 
 const WhyDonate = () => {
   return (
-    <div className="bg-ubi-pink flex w-3/4 items-center justify-center rounded-2xl px-6 py-12 shadow-xl">
+    <div className="bg-ubi-pink flex w-3/4 items-center justify-center rounded-2xl px-6 py-12 shadow-xl shadow-black/20">
       <div className="w-3/5 flex-col pr-12">
         <p className="font-volkhov text-ubi-blue mb-4 text-6xl font-bold">
           Why Donate Blood
         </p>
-        <p className="text-ubi-red-200 mb-6 text-2xl font-bold">
+        <p className="text-ubi-red-200 mb-6 text-3xl font-bold">
           Powered By University Blood Initiative
         </p>
-        <p className="text-ubi-blue text-xl">
+        <p className="text-ubi-blue text-2xl">
           Donating blood is one of the simplest ways to save a life, as someone
           in need requires blood every few seconds for trauma care, chronic
           illness treatment, or surgery. A shortage in the nationwide blood
@@ -25,7 +27,7 @@ const WhyDonate = () => {
         <div className="flex w-full items-center pb-3">
           <div className="relative h-40 w-40">
             <Image
-              src="/assets/UBI_Logo_TranspBG.svg"
+              src={UBILogoTransparant}
               alt="UBI Logo"
               fill
               className="object-contain"
@@ -40,11 +42,11 @@ const WhyDonate = () => {
           </div>
         </div>
 
-        <hr className="border-{#BEB1B1} my-2 w-full" />
+        <hr className="my-2 w-full border-[#BEB1B1]" />
         <div className="relative h-30 w-9/10">
           <Image
-            src="/assets/LifeStream.svg"
-            alt="LifeStream"
+            src={Lifestream}
+            alt="Lifestream"
             fill
             className="object-contain"
           />
