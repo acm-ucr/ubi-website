@@ -1,4 +1,3 @@
-import Practice from "@/components/Practice";
 import OurMission from "@/components/home/OurMission";
 import Interest from "@/components/home/StillInterested";
 
