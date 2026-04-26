@@ -23,7 +23,7 @@ const StillInterest = () => {
           </p>
           <Link
             href="https://www.universitybloodinitiative.org/"
-            className="bg-ubi-tan text-ubi-blue border-ubi-blue -my-4 mb-15 justify-end rounded-3xl border-4 px-15 pt-5 pb-4 text-center text-[3vw] font-bold drop-shadow-xl"
+            className="bg-ubi-tan text-ubi-blue border-ubi-blue my-4 mb-15 justify-end rounded-3xl border-4 px-15 pt-5 pb-4 text-center text-[3vw] font-bold drop-shadow-xl"
           >
             Learn more
           </Link>
