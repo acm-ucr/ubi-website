@@ -1,6 +1,7 @@
 import "./globals.css";
 import { ReactQueryClientProvider } from "@/utils/react-query";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "UBI Website",
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: LayoutProps) {
         <ReactQueryClientProvider>
           <Navbar />
           {children}
+          <Footer />
         </ReactQueryClientProvider>
       </body>
     </html>
