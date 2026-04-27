@@ -3,14 +3,10 @@ import Interest from "@/components/home/StillInterested";
 
 const Home = () => {
   return (
-    <>
-      <div className="flex h-screen w-screen items-center justify-center">
-        <OurMission />
-      </div>
-      <div>
-        <Interest />
-      </div>
-    </>
+    <div className="flex h-min flex-col items-center justify-center">
+      <OurMission />
+      <Interest />
+    </div>
   );
 };
 
