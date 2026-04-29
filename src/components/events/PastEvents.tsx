@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const PastEvents = () => {
   return (
-    <div className="mb-10 flex w-full flex-col items-center">
+    <div className="mb-35 flex w-full flex-col items-center">
       <div className="font-volkhov text-ubi-blue pb-30 text-6xl font-black">
         <p>PAST EVENTS</p>
       </div>
