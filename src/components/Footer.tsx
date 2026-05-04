@@ -4,12 +4,12 @@ import { footerLinks, FooterLink } from "@/data/FooterLinks";
 import footer from "@/public/assets/footerLogo.svg";
 const Footer = () => {
   return (
-    <footer className="bg-ubi-red-100 relative w-full">
+    <footer className="bg-ubi-red-100 relative mt-auto w-full">
       <div className="relative flex items-center justify-between">
         <Image
           src={footer}
           alt="UCR Blood Initiative Logo"
-          width={550}
+          width={500}
           height={100}
         />
 
