@@ -13,14 +13,14 @@ const Intro = () => {
           UCR Blood Initiative
         </p>
 
-        <p className="font-volkhov text-ubi-red-100 text-4xl">
+        <p className="text-ubi-red-100 text-4xl">
           <span className="font-extrabold">Donate blood. </span>Empower the next{" "}
           <br />
           generation to build a sustainable, <br /> equitable blood supply for
           all.
         </p>
 
-        <p className="font-volkhov text-ubi-blue py-10 text-3xl">
+        <p className="text-ubi-blue py-10 text-3xl">
           <span className="font-extrabold"> UC Riverside </span> Branch of
           University Blood <br /> Drive (UBI)
         </p>
@@ -28,7 +28,7 @@ const Intro = () => {
         <Link
           href="https://docs.google.com/forms/d/e/1FAIpQLSdq8CkTO3FaaeW-ZlIC928K2Fp2nxQDhx71SWn-PtoLY5xGbg/viewform"
           target="_blank"
-          className="font-volkhov text-ubi-white bg-ubi-red-100 w-max rounded-full px-4 py-2 text-3xl shadow-xl shadow-black/30"
+          className="text-ubi-white bg-ubi-red-100 w-max rounded-full px-8 py-3 text-3xl shadow-xl shadow-black/30"
         >
           Donate With Us
         </Link>
