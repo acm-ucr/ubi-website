@@ -1,9 +1,22 @@
 import Title from "@/components/Title";
+import Statistics from "@/components/about/Statistics";
+import WhyDonate from "@/components/about/WhyDonate";
 
 const About = () => {
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <Title text="About Us" />
+      <Statistics
+        donation_num="250+"
+        donation_text="Donations"
+        engage_num="80+"
+        engage_text="Student Engagement"
+        bld_drv_num="10+"
+        bld_drv_text="Blood Drives"
+      />
+      <div className="flex items-center justify-center py-15">
+        <WhyDonate />
+      </div>
     </div>
   );
 };
