@@ -7,7 +7,6 @@ const About = () => {
   return (
     <div className="flex flex-col items-center">
       <Title text="About Us" />
-      {/* render the OurVision component below the title */}
       <OurVision />
       <Statistics
         donation_num="250+"
