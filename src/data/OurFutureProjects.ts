@@ -6,19 +6,16 @@ export const FutureProjects = [
   {
     text: "UCR CAMPUS BLOOD DRIVE WEEK",
     image: Campus,
-    imageSize: 215,
-    imageClassName: "pb-5",
+    imageClassName: "pb-5 pt-1 w-[18vw]",
   },
   {
     text: "PHLEBOTOMY WEEK ON CAMPUS",
     image: Syringe,
-    imageSize: 90,
-    imageClassName: "pb-5",
+    imageClassName: "pb-5 w-[7.5vw]",
   },
   {
     text: "MORE LIFESTREAM COLLABS",
     image: LifeStream,
-    imageSize: 200,
-    imageClassName: "pt-3 pb-1",
+    imageClassName: "pt-3 pb-1 w-[15vw]",
   },
 ];

@@ -1,4 +1,4 @@
-import FutureCard from "@/data/FutureProjectsCard";
+import FutureCard from "@/components/about/FutureProjectsCard";
 import { FutureProjects } from "@/data/OurFutureProjects";
 
 const FutureProject = () => {
@@ -14,7 +14,6 @@ const FutureProject = () => {
               key={card.text}
               imageSrc={card.image}
               text={card.text}
-              imageSize={card.imageSize}
               imageClassName={card.imageClassName ?? ""}
             />
           ))}
