@@ -14,13 +14,11 @@
   --color-ubi-white: #ffffff;
   --color-ubi-blue: #212e6f;
   --color-ubi-navy: #151539;
+  --color-ubi-rose: #fbddd0;
+  --color-ubi-tan: #fdf2e0;
   --font-volkhov: "Volkhov", serif;
 }
 
 body {
   font-family: "Poppins", sans-serif;
-}
-
-.font-volkhov {
-  font-family: "Volkhov", serif;
 }
