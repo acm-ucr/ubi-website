@@ -1,4 +1,5 @@
 import Title from "@/components/Title";
+
 const Board = () => {
   return (
     <div>
