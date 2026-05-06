@@ -1,6 +1,7 @@
 import Title from "@/components/Title";
 import Statistics from "@/components/about/Statistics";
 import WhyDonate from "@/components/about/WhyDonate";
+import FutureProjects from "@/components/about/FutureProjects";
 
 const About = () => {
   return (
@@ -17,6 +18,7 @@ const About = () => {
       <div className="flex items-center justify-center py-15">
         <WhyDonate />
       </div>
+      <FutureProjects />
     </div>
   );
 };
