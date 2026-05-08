@@ -5,7 +5,7 @@ import Logo from "@/public/assets/UBILogowShadow.svg";
 
 const Intro = () => {
   return (
-    <div className="flex pt-7 md:items-center md:justify-center lg:flex-row">
+    <div className="flex w-full justify-center pt-7 md:items-center md:justify-center lg:flex-row">
       <div className="mt-0 flex w-full flex-col items-center text-center lg:-mt-20 lg:w-1/2 lg:items-start lg:pl-20 lg:text-left">
         <Image src={Logo} alt="logo" className="w-1/3 lg:w-auto" />
 
@@ -13,16 +13,16 @@ const Intro = () => {
           UCR Blood Initiative
         </p>
 
-        <p className="text-ubi-red-100 items-center text-2xl lg:text-4xl">
+        <p className="text-ubi-red-100 items-center px-5 text-2xl lg:px-0 lg:text-4xl">
           <span className="font-extrabold">Donate blood. </span>Empower the next{" "}
-          <br />
-          generation to build a sustainable, <br /> equitable blood supply for
-          all.
+          <br className="hidden lg:block" />
+          generation to build a sustainable, <br className="hidden lg:block" />{" "}
+          equitable blood supply for all.
         </p>
 
-        <p className="text-ubi-blue py-10 text-2xl lg:text-3xl">
+        <p className="text-ubi-blue px-5 py-10 text-2xl lg:px-0 lg:text-3xl">
           <span className="font-extrabold"> UC Riverside </span> Branch of
-          University Blood <br /> Drive (UBI)
+          University Blood <br className="hidden lg:block" /> Drive (UBI)
         </p>
 
         <Link
