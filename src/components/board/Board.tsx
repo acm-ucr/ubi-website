@@ -1,5 +1,5 @@
-import BoardCard from "./BoardCard";
-import { BoardCardInfo } from "./BoardCardInfo";
+import BoardCard from "@/components/board/BoardCard";
+import { BoardCardInfo } from "@/components/board/BoardCardInfo";
 
 const BoardComp = () => {
   return (
