@@ -5,8 +5,8 @@ import { navbarLinks } from "@/data/navbarLinks";
 
 const Navbar = () => {
   return (
-    <nav className="bg-ubi-red-100">
-      <div className="flex items-center justify-between px-4 text-white">
+    <nav className="bg-ubi-red-100 w-full">
+      <div className="flex items-center justify-between overflow-hidden px-4 text-white">
         <Link href="/" className="flex items-center gap-4">
           <Image src={UBILogo} alt="logo" className="h-15 w-15" />
           <div className="text-2xl">UBI</div>
