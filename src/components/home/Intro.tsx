@@ -6,10 +6,10 @@ import Logo from "@/public/assets/UBILogowShadow.svg";
 const Intro = () => {
   return (
     <div className="flex w-full justify-center pt-7 md:items-center md:justify-center lg:flex-row">
-      <div className="mt-0 flex w-full flex-col items-center text-center lg:-mt-20 lg:w-1/2 lg:items-start lg:pl-20 lg:text-left">
+      <div className="flex w-full flex-col items-center text-center lg:-mt-20 lg:w-1/2 lg:items-start lg:pl-20 lg:text-left">
         <Image src={Logo} alt="logo" className="w-1/3 lg:w-auto" />
 
-        <p className="font-volkhov text-ubi-blue mb-4 text-[4rem] font-bold lg:text-[7rem] lg:leading-snug">
+        <p className="font-volkhov text-ubi-blue mb-4 text-[3rem] font-bold lg:text-[7rem] lg:leading-snug">
           UCR Blood Initiative
         </p>
 
