@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { footerLinks, FooterLink } from "@/data/FooterLinks";
 import footer from "@/public/assets/footerLogo.svg";
+import mobFooter from "@/public/assets/mobileFooter.svg";
 const Footer = () => {
   return (
     <footer className="bg-ubi-red-100 relative mt-auto w-full">
@@ -11,9 +12,16 @@ const Footer = () => {
           alt="UCR Blood Initiative Logo"
           width={500}
           height={100}
+          className="hidden md:block"
+        />
+        <Image
+          src={mobFooter}
+          alt="UCR Blood Initiative Logo"
+          height={75}
+          className="p-5 md:hidden"
         />
 
-        <div className="text-ubi-white absolute left-[55%] -translate-x-1/2 text-center text-sm font-semibold">
+        <div className="text-ubi-white absolute left-[55%] hidden -translate-x-1/2 text-center text-sm font-semibold md:block">
           UCR Blood Initiative © 2026 All Rights Reserved
         </div>
 
