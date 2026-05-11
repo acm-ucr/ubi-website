@@ -22,24 +22,20 @@ const ErrorMessage = ({ toptext, bottext }: errorProps) => {
         className="absolute top-[28%] left-[76%] hidden w-[37vw] scale-x-[-1] rotate-25 md:block"
       />
 
-      <div className="-mt-8 flex flex-col items-center text-center font-extrabold">
-        <p className="text-ubiboard-red-300 text-[13vw]">
-          <span className="hidden md:inline">{toptext}</span>
-          <span className="md:hidden">404</span>
+      <div className="-mt-8 flex flex-col items-center py-10 text-center font-extrabold md:py-0">
+        <p className="text-ubiboard-red-300 text-[15vw] md:text-[13vw]">
+          {toptext}
         </p>
-        <p className="text-ubi-navy text-[3vw]">
-          <span className="text-[5vw] md:hidden">Page Not Found</span>
-          <span className="hidden md:inline">{bottext}</span>
-        </p>
+        <p className="text-ubi-navy text-[8vw] md:text-[3vw]">{bottext}</p>
 
         <Image
           src={ErrorHeart}
           alt="Broken heart"
-          className="w-1/2 pt-10 md:hidden"
+          className="w-2/3 pt-15 md:hidden"
         />
         <Link
           href="/"
-          className="bg-ubi-lightpink text-ubi-darkred-100 mt-17 rounded-3xl px-15 pt-5 pb-5 text-center text-[3vw] drop-shadow-xl transition duration-300 hover:drop-shadow-none"
+          className="md:bg-ubi-lightpink bg-ubi-tan text-ubi-darkred-100 mt-17 rounded-3xl px-15 pt-5 pb-5 text-center text-[5vw] drop-shadow-xl transition duration-300 hover:drop-shadow-none md:text-[3vw]"
         >
           Go home
         </Link>
