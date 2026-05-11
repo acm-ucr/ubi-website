@@ -4,7 +4,7 @@ import { footerLinks, FooterLink } from "@/data/FooterLinks";
 import footer from "@/public/assets/footerLogo.svg";
 const Footer = () => {
   return (
-    <footer className="bg-ubi-red-100 relative mt-auto w-full">
+    <footer className="bg-ubi-red-100 relative mt-auto w-full overflow-hidden">
       <div className="relative flex items-center justify-between">
         <Image
           src={footer}
