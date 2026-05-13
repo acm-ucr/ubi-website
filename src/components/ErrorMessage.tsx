@@ -23,21 +23,23 @@ const ErrorMessage = ({ toptext, bottext }: errorProps) => {
       />
 
       <div className="-mt-8 flex flex-col items-center py-10 text-center font-extrabold md:py-0">
-        <p className="text-ubiboard-red-300 text-[15vw] md:text-[13vw]">
+        <p className="text-ubiboard-red-300 text-[30vw] md:text-[13vw]">
           {toptext}
         </p>
-        <p className="text-ubi-navy text-[8vw] md:text-[3vw]">{bottext}</p>
+        <p className="text-ubi-navy text-[9vw] font-bold md:text-[3vw]">
+          {bottext}
+        </p>
 
         <Image
           src={ErrorHeart}
           alt="Broken heart"
-          className="w-2/3 pt-15 md:hidden"
+          className="w-4/5 pt-15 md:hidden"
         />
         <Link
           href="/"
-          className="md:bg-ubi-lightpink bg-ubi-tan text-ubi-darkred-100 mt-17 rounded-3xl px-15 pt-5 pb-5 text-center text-[5vw] drop-shadow-xl transition duration-300 hover:drop-shadow-none md:text-[3vw]"
+          className="bg-ubi-lightpink text-ubi-darkred-100 mt-17 mb-5 rounded-3xl px-15 py-5 text-center text-[7vw] drop-shadow-xl transition duration-300 hover:drop-shadow-none md:text-[3vw]"
         >
-          Go home
+          Go Home
         </Link>
       </div>
     </div>
