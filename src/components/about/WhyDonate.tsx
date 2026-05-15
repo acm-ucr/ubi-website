@@ -94,7 +94,7 @@ const WhyDonate = () => {
           </div>
         </div>
 
-        <hr className="w-full border-[#BEB1B1]" />
+        <hr className="w-full border-2 border-[#BEB1B1]" />
         <div className="relative h-30 w-9/10">
           <Image
             src={Lifestream}
