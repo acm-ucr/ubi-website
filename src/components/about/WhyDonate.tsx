@@ -114,7 +114,7 @@ const WhyDonate = () => {
           </div>
         </div>
         <Link href="https://www.lstream.org" target="_blank">
-          <button className="border-ubi-red-200 bg-ubi-pink text-ubi-red-200 active:bg-ubi-red-200 lg:hover:bg-ubi-red-200 mt-6 rounded-full border-4 px-16 py-2 text-xl shadow-xl transition-colors hover:text-white">
+          <button className="border-ubi-red-200 bg-ubi-pink text-ubi-red-200 active:bg-ubi-red-200 lg:hover:bg-ubi-red-200 mt-6 rounded-full border-4 px-16 py-2 text-xl shadow-xl transition-colors active:text-white lg:hover:text-white">
             Learn more
           </button>
         </Link>
