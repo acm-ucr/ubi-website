@@ -3,9 +3,9 @@ import OurVisionImg from "@/public/assets/Vision-Photo.svg";
 
 const OurVision = () => {
   return (
-    <div className="bg-ubi-tan flex w-4/5 items-center justify-center pb-16">
-      <div className="flex items-center gap-10">
-        <div className="relative h-97 w-9/20 shadow-[10px_8px_0px_#BEB1B1]">
+    <div className="bg-ubi-tan flex w-9/10 items-center justify-center pb-16 md:w-4/5 lg:w-4/5">
+      <div className="lg:flew-row flex flex-col items-center gap-10 md:flex-row">
+        <div className="relative h-50 w-4/5 shadow-[10px_8px_0px_#BEB1B1] md:h-97 md:w-9/20 lg:h-97 lg:w-9/20">
           <Image
             src={OurVisionImg}
             alt="OurVisionImg"
@@ -14,7 +14,7 @@ const OurVision = () => {
           />
         </div>
 
-        <div className="bg-ubi-pink flex w-1/2 flex-col justify-center rounded-[40px] p-10 shadow-[10px_8px_0px_#BEB1B1]">
+        <div className="bg-ubi-pink lg:1/2 flex w-9/10 flex-col justify-center rounded-[40px] p-10 shadow-[10px_8px_0px_#BEB1B1] md:w-1/2">
           <p className="font-volkhov text-ubi-blue pb-2 text-6xl font-bold">
             Our Vision
           </p>
