@@ -6,27 +6,39 @@ declare global {
   }
 }
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
+import emailjs from "@emailjs/browser";
 import FormBG from "@/public/assets/Contact-Form-BG.svg";
 import ContactUsIcon from "@/public/assets/Contact-Icon.svg";
 
 const ContactUs = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      await emailjs.sendForm(
+        "SERVICE_ID",
+        "TEMPLATE_ID",
+        formRef.current!,
+        "PUBLIC_KEY",
+      );
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <>
-      <iframe
-        name="hidden_iframe"
-        id="hidden_iframe"
-        style={{ display: "none" }}
-        onLoad={() => {
-          if (window.submitted) {
-            setIsSubmitted(true);
-          }
-        }}
-      ></iframe>
-
       <div className="grid w-4/5 grid-cols-2 items-center gap-12">
         <div>
           <p className="font-Poppins text-ubi-blue text-6xl font-bold">
@@ -57,17 +69,13 @@ const ContactUs = () => {
                 Form Submitted!
               </div>
             ) : (
-              <form
-                action="https://docs.google.com/forms/d/e/1FAIpQLSeqYtyUQ68ZIQUhFPDAPbVFTsEUhBjqjRAqhSv3NUUsABRE3w/formResponse"
-                onSubmit={() => (window.submitted = true)}
-                target="hidden_iframe"
-              >
+              <form ref={formRef} onSubmit={handleSubmit}>
                 <div>
                   <p className="text-ubi-blue mb-2 ml-1 block font-bold">
                     Full Name
                   </p>
                   <input
-                    name="entry.613114370"
+                    name="user_name"
                     type="text"
                     placeholder="John Doe"
                     required
@@ -80,7 +88,7 @@ const ContactUs = () => {
                     Email
                   </p>
                   <input
-                    name="entry.1925934543"
+                    name="user_email"
                     type="email"
                     placeholder="jdoe@ucr.edu"
                     required
@@ -93,7 +101,7 @@ const ContactUs = () => {
                     Message
                   </p>
                   <textarea
-                    name="entry.1027098586"
+                    name="message"
                     placeholder="Type your message"
                     required
                     className="border-ubi-red-100 w-full rounded-2xl border bg-white px-6 py-4 text-gray-700 outline-none"
@@ -103,9 +111,10 @@ const ContactUs = () => {
                 <div className="flex justify-center pt-4">
                   <button
                     type="submit"
+                    disabled={isLoading}
                     className="bg-ubi-red-100 rounded-full px-10 py-3 font-bold text-white shadow-md hover:brightness-110"
                   >
-                    Submit
+                    {isLoading ? "Sending..." : "Submit"}
                   </button>
                 </div>
               </form>
