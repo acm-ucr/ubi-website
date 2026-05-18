@@ -33,7 +33,7 @@ const WhyDonate = () => {
           <div className="flex w-full items-center pb-3">
             <div className="relative h-40 w-40">
               <Image
-                src={UBILogoTransparant}
+                src={UBILogoTransparent}
                 alt="UBI Logo"
                 fill
                 className="object-contain"
