@@ -8,7 +8,7 @@ const OurMission = () => {
     <div className="relative flex w-full justify-center p-5 lg:w-4/5">
       <motion.div
         className="bg-ubi-lightpink h-full w-9/10 rounded-4xl shadow-xl shadow-black/20 lg:w-full"
-        viewport={{ amount: 0.1 }}
+        viewport={{ once:true, amount:0.1 }}
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -29,6 +29,7 @@ const OurMission = () => {
         <div className="-mt-7 flex flex-col items-center justify-around px-6 pb-6 lg:flex-row">
           {missionCards.map((card, index) => (
             <motion.div
+              viewport={{ once: true }}
               key={card.text}
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
