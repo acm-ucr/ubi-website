@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import UBILogoTransparant from "@/public/assets/UBI_Logo_TranspBG.svg";
+import UBILogoTransparent from "@/public/assets/UBI_Logo_TranspBG.svg";
 import Lifestream from "@/public/assets/Lifestream.svg";
 import Border from "@/public/assets/Checker-Border_Mobile.svg";
 
@@ -33,7 +33,7 @@ const WhyDonate = () => {
           <div className="flex w-full items-center pb-3">
             <div className="relative h-40 w-40">
               <Image
-                src={UBILogoTransparant}
+                src={UBILogoTransparent}
                 alt="UBI Logo"
                 fill
                 className="object-contain"
@@ -79,7 +79,7 @@ const WhyDonate = () => {
         <div className="flex w-full items-center pb-3">
           <div className="relative mr-4 h-40 w-[5rem]">
             <Image
-              src={UBILogoTransparant}
+              src={UBILogoTransparent}
               alt="UBI Logo"
               fill
               className="object-contain"
