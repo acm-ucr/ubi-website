@@ -9,8 +9,40 @@ declare global {
 import { useState, useRef } from "react";
 import Image from "next/image";
 import emailjs from "@emailjs/browser";
+import { motion } from "motion/react";
 import FormBG from "@/public/assets/Contact-Form-BG.svg";
 import ContactUsIcon from "@/public/assets/Contact-Icon.svg";
+
+const animationY = {
+  hidden: { opacity: 0, y: 50 },
+  show: {
+    opacity: 1,
+    y: 0,
+  },
+};
+
+const animationScale = {
+  hidden: {
+    opacity: 0,
+    scale: 0.5,
+  },
+  show: {
+    opacity: 1,
+    scale: 1,
+  },
+};
+
+const animationX = {
+  hidden: { opacity: 0, x: -50 },
+  show: {
+    opacity: 1,
+    x: 0,
+  },
+};
+
+const transition = {
+  duration: 0.7,
+};
 
 const ContactUs = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -40,20 +72,33 @@ const ContactUs = () => {
   return (
     <>
       <div className="grid w-11/12 grid-cols-1 items-center md:w-4/5 md:grid-cols-2 md:gap-12">
-        <div>
-          <p className="font-Poppins text-ubi-blue text-4xl font-bold md:text-6xl">
-            Contact Us
-          </p>
-          <div className="relative w-0 md:w-full">
-            <Image
-              src={ContactUsIcon}
-              alt="Contact Us Icon"
-              className="h-auto w-full"
-            />
+        <motion.div
+          variants={animationX}
+          transition={{ ...transition, delay: 0.2 }}
+          initial="hidden"
+          whileInView="show"
+        >
+          <div>
+            <p className="font-Poppins text-ubi-blue text-4xl font-bold md:text-6xl">
+              Contact Us
+            </p>
+            <div className="relative w-0 md:w-full">
+              <Image
+                src={ContactUsIcon}
+                alt="Contact Us Icon"
+                className="h-auto w-full"
+              />
+            </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="relative p-12 md:p-4">
+        <motion.div
+          className="relative p-4 md:p-12"
+          variants={animationScale}
+          transition={{ ...transition, delay: 0.4 }}
+          initial="hidden"
+          whileInView="show"
+        >
           <div className="absolute inset-0 z-0">
             <Image
               src={FormBG}
@@ -70,7 +115,12 @@ const ContactUs = () => {
               </div>
             ) : (
               <form ref={formRef} onSubmit={handleSubmit}>
-                <div>
+                <motion.div
+                  variants={animationY}
+                  transition={{ ...transition, delay: 0.5 }}
+                  initial="hidden"
+                  whileInView="show"
+                >
                   <p className="text-ubi-blue mb-2 ml-1 block font-bold">
                     Full Name
                   </p>
@@ -81,9 +131,14 @@ const ContactUs = () => {
                     required
                     className="border-ubi-red-100 w-full rounded-2xl border bg-white px-6 py-3 text-gray-700 outline-none"
                   />
-                </div>
+                </motion.div>
 
-                <div>
+                <motion.div
+                  variants={animationY}
+                  transition={{ ...transition, delay: 0.6 }}
+                  initial="hidden"
+                  whileInView="show"
+                >
                   <p className="text-ubi-blue mb-2 ml-1 block pt-3 font-bold">
                     Email
                   </p>
@@ -94,9 +149,14 @@ const ContactUs = () => {
                     required
                     className="border-ubi-red-100 w-full rounded-2xl border bg-white px-6 py-3 text-gray-700 outline-none"
                   />
-                </div>
+                </motion.div>
 
-                <div>
+                <motion.div
+                  variants={animationY}
+                  transition={{ ...transition, delay: 0.7 }}
+                  initial="hidden"
+                  whileInView="show"
+                >
                   <p className="text-ubi-blue mb-2 ml-1 block pt-3 font-bold">
                     Message
                   </p>
@@ -106,16 +166,18 @@ const ContactUs = () => {
                     required
                     className="border-ubi-red-100 w-full rounded-2xl border bg-white px-6 py-4 text-gray-700 outline-none"
                   />
-                </div>
+                </motion.div>
 
                 <div className="flex justify-center pt-4">
-                  <button
+                  <motion.button
                     type="submit"
                     disabled={isLoading}
                     className="bg-ubi-red-100 rounded-full px-10 py-3 font-bold text-white shadow-md hover:brightness-110"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                   >
                     {isLoading ? "Sending..." : "Submit"}
-                  </button>
+                  </motion.button>
                 </div>
 
                 <div className="pointer-events-none absolute right-0 bottom-0 w-22 md:w-0">
@@ -128,7 +190,7 @@ const ContactUs = () => {
               </form>
             )}
           </div>
-        </div>
+        </motion.div>
       </div>
     </>
   );
