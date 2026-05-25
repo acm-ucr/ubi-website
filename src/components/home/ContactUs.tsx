@@ -108,7 +108,7 @@ const ContactUs = () => {
             />
           </div>
 
-          <div className="relative z-10 rounded-4xl bg-[#FFCDC5] p-6 md:p-12">
+          <div className="relative z-10 overflow-hidden rounded-4xl bg-[#FFCDC5] p-6 md:p-12">
             {isSubmitted ? (
               <div className="flex min-h-[350px] flex-col items-center justify-center text-center text-2xl font-bold text-[#14213d] sm:text-3xl">
                 Form Submitted!
@@ -180,7 +180,7 @@ const ContactUs = () => {
                   </motion.button>
                 </div>
 
-                <div className="pointer-events-none absolute right-0 bottom-0 w-22 md:w-0">
+                <div className="pointer-events-none absolute right-0 bottom-0 w-26 md:w-0">
                   <Image
                     src={ContactUsIcon}
                     alt="Contact Us Icon"
