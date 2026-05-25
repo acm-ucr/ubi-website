@@ -129,7 +129,7 @@ const ContactUs = () => {
                     type="text"
                     placeholder="John Doe"
                     required
-                    className="border-ubi-red-100 w-full rounded-2xl border bg-white px-6 py-3 text-gray-700 outline-none"
+                    className="border-ubi-red-100 w-full rounded-4xl border-2 bg-white px-6 py-3 text-gray-700 outline-none md:rounded-2xl md:border-1"
                   />
                 </motion.div>
 
@@ -147,7 +147,7 @@ const ContactUs = () => {
                     type="email"
                     placeholder="jdoe@ucr.edu"
                     required
-                    className="border-ubi-red-100 w-full rounded-2xl border bg-white px-6 py-3 text-gray-700 outline-none"
+                    className="border-ubi-red-100 w-full rounded-4xl border-2 bg-white px-6 py-3 text-gray-700 outline-none md:rounded-2xl md:border-1"
                   />
                 </motion.div>
 
@@ -164,7 +164,7 @@ const ContactUs = () => {
                     name="message"
                     placeholder="Type your message"
                     required
-                    className="border-ubi-red-100 w-full rounded-2xl border bg-white px-6 py-4 text-gray-700 outline-none"
+                    className="border-ubi-red-100 w-full rounded-3xl border-2 bg-white px-6 py-3 text-gray-700 outline-none md:rounded-2xl md:border-1"
                   />
                 </motion.div>
 
