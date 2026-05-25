@@ -39,12 +39,12 @@ const ContactUs = () => {
 
   return (
     <>
-      <div className="grid w-4/5 grid-cols-2 items-center gap-12">
+      <div className="grid w-11/12 grid-cols-1 items-center md:w-4/5 md:grid-cols-2 md:gap-12">
         <div>
-          <p className="font-Poppins text-ubi-blue text-6xl font-bold">
+          <p className="font-Poppins text-ubi-blue text-4xl font-bold md:text-6xl">
             Contact Us
           </p>
-          <div className="relative w-full">
+          <div className="relative w-0 md:w-full">
             <Image
               src={ContactUsIcon}
               alt="Contact Us Icon"
@@ -53,7 +53,7 @@ const ContactUs = () => {
           </div>
         </div>
 
-        <div className="relative p-12">
+        <div className="relative p-12 md:p-4">
           <div className="absolute inset-0 z-0">
             <Image
               src={FormBG}
@@ -63,7 +63,7 @@ const ContactUs = () => {
             />
           </div>
 
-          <div className="relative z-10 rounded-4xl bg-[#FFCDC5] p-12">
+          <div className="relative z-10 rounded-4xl bg-[#FFCDC5] p-6 md:p-12">
             {isSubmitted ? (
               <div className="flex min-h-[350px] flex-col items-center justify-center text-center text-2xl font-bold text-[#14213d] sm:text-3xl">
                 Form Submitted!
@@ -116,6 +116,14 @@ const ContactUs = () => {
                   >
                     {isLoading ? "Sending..." : "Submit"}
                   </button>
+                </div>
+
+                <div className="pointer-events-none absolute right-0 bottom-0 w-22 md:w-0">
+                  <Image
+                    src={ContactUsIcon}
+                    alt="Contact Us Icon"
+                    className="h-auto w-full"
+                  />
                 </div>
               </form>
             )}
