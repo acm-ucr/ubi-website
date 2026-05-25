@@ -59,7 +59,7 @@ const Intro = () => {
       <motion.div
         className="hidden lg:flex lg:w-1/2 lg:justify-end"
         whileInView={{ scale: [1, 1.05, 1, 1.05, 1] }}
-        transition={{ duration: 0.6, times: [0, 0.25, 0.5, 0.75, 1] }}
+        transition={{ duration: 0.8, times: [0, 0.25, 0.5, 0.75, 1] }}
         viewport={{ once: true }}
       >
         <Image src={Heart} alt="heart" />
