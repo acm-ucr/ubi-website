@@ -7,6 +7,22 @@ export interface CalendarEvent {
   description?: string;
 }
 
+// Raw shape returned by the Google Calendar API per event item
+interface GoogleCalendarEventItem {
+  id: string;
+  summary?: string;
+  location?: string;
+  description?: string;
+  start: {
+    dateTime?: string;
+    date?: string;
+  };
+  end: {
+    dateTime?: string;
+    date?: string;
+  };
+}
+
 export const getGoogleCalendarEvents = async (
   timeMin: string,
   timeMax: string,
@@ -41,11 +57,11 @@ export const getGoogleCalendarEvents = async (
   }
 
   const data = await res.json();
-  const events = (data.items || []).map((item: any) => ({
+  const events = (data.items as GoogleCalendarEventItem[] || []).map((item) => ({
     id: item.id,
     title: item.summary || "Untitled Event",
-    start: item.start?.dateTime || item.start?.date || new Date().toISOString(),
-    end: item.end?.dateTime || item.end?.date || new Date().toISOString(),
+    start: item.start?.dateTime ?? item.start?.date ?? new Date().toISOString(),
+    end: item.end?.dateTime ?? item.end?.date ?? new Date().toISOString(),
     location: item.location,
     description: item.description,
   }));
