@@ -1,6 +1,8 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import Squares from "@/public/assets/vertical_checker.svg";
+import { motion } from "motion/react";
 
 const StillInterest = () => {
   return (
@@ -20,7 +22,13 @@ const StillInterest = () => {
         Still Interested?
       </p>
 
-      <div className="bg-ubi-rose top-[90%] h-min w-min justify-self-center rounded-4xl shadow-xl shadow-black/20">
+      <motion.div
+        initial={{ scale: 0 }}
+        viewport={{ once: true }}
+        whileInView={{ scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="bg-ubi-rose top-[90%] h-min w-min justify-self-center rounded-4xl shadow-xl shadow-black/20"
+      >
         <p className="text-ubi-darkred-100 px-18 pt-7 pb-4 text-left text-[4vw] font-extrabold tracking-wide">
           Visit our Parent Organization
         </p>
@@ -33,15 +41,17 @@ const StillInterest = () => {
           <p className="text-ubi-blue w-[45vw] px-20 pt-2 pb-8 text-[2vw] text-wrap">
             Empowers a next generation of diverse blood donors and advocates.
           </p>
-          <Link
-            href="https://www.universitybloodinitiative.org/"
-            target="_blank"
-            className="bg-ubi-tan text-ubi-blue border-ubi-blue my-4 mb-15 justify-end rounded-3xl border-4 px-15 pt-5 pb-4 text-center text-[3vw] font-bold drop-shadow-xl"
-          >
-            Learn more
-          </Link>
+          <motion.div whileHover={{ scale: 1.05 }}>
+            <Link
+              href="https://www.universitybloodinitiative.org/"
+              target="_blank"
+              className="bg-ubi-tan text-ubi-blue border-ubi-blue my-4 mb-15 justify-end rounded-3xl border-4 px-15 pt-5 pb-4 text-center text-[3vw] font-bold drop-shadow-xl"
+            >
+              Learn more
+            </Link>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
