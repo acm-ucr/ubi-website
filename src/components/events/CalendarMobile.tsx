@@ -7,6 +7,8 @@ import {
 } from "@/lib/googleCalendar";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+// ─── Helpers ──────────────────────────────────────────────────────────────────
+
 const isAllDay = (event: CalendarEvent): boolean => !event.start.includes("T");
 
 const getEventStart = (event: CalendarEvent): Date => {
@@ -61,6 +63,9 @@ const getEventsForDay = (events: CalendarEvent[], day: Date): CalendarEvent[] =>
       return isSameDay(start, day) || (day > start && day <= adjustedEnd);
     })
     .sort((a, b) => getEventStart(a).getTime() - getEventStart(b).getTime());
+
+// ─── Expandable Pill ──────────────────────────────────────────────────────────
+
 interface PillProps {
   event: CalendarEvent;
 }
@@ -90,36 +95,35 @@ const EventPill = ({ event }: PillProps) => {
       onMouseEnter={handleMouseEnterContainer}
       onMouseLeave={handleMouseLeaveContainer}
     >
+      {/* Base pill */}
       <div
         onClick={handleClick}
-        className="bg-ubicalendar-red text-md text-ubi-navy flex w-full cursor-pointer items-center justify-between gap-2 overflow-hidden rounded-lg px-3 py-2 font-extrabold shadow-sm transition-opacity duration-100 hover:opacity-90"
+        className="bg-ubicalendar-red text-ubi-navy flex w-full cursor-pointer items-center justify-between gap-1 overflow-hidden rounded px-1.5 py-0.5 text-[10px] font-extrabold shadow-sm transition-opacity duration-100 active:opacity-70"
       >
         <span className="truncate">{event.title}</span>
-        {!allDay && (
-          <span className="shrink-0 opacity-90">{formatTime(start)}</span>
-        )}
       </div>
 
+      {/* Expanded content */}
       {open && (
-        <div className="absolute top-0 left-0 z-30 w-full min-w-[180px] overflow-hidden rounded-lg bg-[#ffc9c1] shadow-[4px_6px_0_rgba(0,0,0,0.2)]">
+        <div className="absolute top-0 left-0 z-30 w-full min-w-[140px] overflow-hidden rounded-lg bg-[#ffc9c1] shadow-[4px_6px_0_rgba(0,0,0,0.2)]">
           <div
             onClick={handleClick}
-            className="bg-ubicalendar-red flex cursor-pointer items-center justify-between gap-2 px-3 py-2"
+            className="bg-ubicalendar-red flex cursor-pointer items-center justify-between gap-1 px-2 py-1"
           >
-            <span className="text-md text-ubi-navy truncate font-extrabold">
+            <span className="text-ubi-navy truncate text-[10px] font-extrabold">
               {event.title}
             </span>
             {!allDay && (
-              <span className="text-md text-ubi-navy shrink-0 font-extrabold opacity-90">
+              <span className="text-ubi-navy shrink-0 text-[10px] font-extrabold opacity-90">
                 {formatTime(start)}
               </span>
             )}
           </div>
-          <div className="flex flex-col gap-1 px-3 py-2">
-            <p className="text-ubi-navy text-sm font-extrabold">
+          <div className="flex flex-col gap-0.5 px-2 py-1.5">
+            <p className="text-ubi-navy text-[10px] font-extrabold">
               {event.location || "Location/Building"}
             </p>
-            <p className="text-ubi-navy text-sm font-extrabold">
+            <p className="text-ubi-navy text-[10px] font-extrabold">
               {allDay ? "All Day" : formatTime(start)}
             </p>
           </div>
@@ -128,6 +132,9 @@ const EventPill = ({ event }: PillProps) => {
     </div>
   );
 };
+
+// ─── Day Cell ─────────────────────────────────────────────────────────────────
+
 interface DayCellProps {
   day: Date;
   isCurrentMonth: boolean;
@@ -142,31 +149,33 @@ const DayCell = ({ day, isCurrentMonth, events }: DayCellProps) => {
 
   return (
     <div
-      className={`relative flex aspect-square flex-col overflow-visible border-r border-b border-black p-6 ${!isCurrentMonth ? "bg-slate-300" : today ? "bg-[#E3C4C3]" : "bg-white"} `}
+      className={`relative flex min-h-[72px] flex-col overflow-visible border-r border-b border-black p-1 ${!isCurrentMonth ? "bg-slate-300" : today ? "bg-[#E3C4C3]" : "bg-white"} `}
     >
       <span
-        className={`mb-1 ml-auto text-sm font-semibold ${
+        className={`mb-0.5 ml-auto text-[11px] font-semibold ${
           isCurrentMonth ? "text-rose-900" : "text-gray-400"
         }`}
       >
         {day.getDate()}
       </span>
 
-      <div className="flex w-full flex-col items-start gap-1 self-start">
+      <div className="flex w-full flex-col items-start gap-0.5 self-start">
         {visible.map((event) => (
           <EventPill key={event.id} event={event} />
         ))}
         {overflow > 0 && (
-          <p className="pl-1 text-xs text-rose-800">+{overflow} more</p>
+          <p className="pl-0.5 text-[9px] text-rose-800">+{overflow} more</p>
         )}
       </div>
     </div>
   );
 };
 
+// ─── CalendarMobile ───────────────────────────────────────────────────────────
+
 const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-const Calendar = () => {
+const CalendarMobile = () => {
   const [events, setEvents] = useState<CalendarEvent[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -221,28 +230,29 @@ const Calendar = () => {
   }, []);
 
   return (
-    <div className="w-full p-24">
+    <div className="w-full px-3 pt-4 pb-6">
       {/* Month header */}
-      <div className="flex items-center justify-center gap-4 px-8 py-6">
+      <div className="flex items-center justify-center gap-3 py-3">
         <button
           onClick={goToPrevMonth}
-          className="flex h-12 w-12 items-center justify-center text-[#7f1728] hover:scale-110 hover:text-[#a71d2a]"
+          className="flex h-8 w-8 items-center justify-center text-[#7f1728]"
           aria-label="Previous month"
         >
-          <ChevronLeft size={48} strokeWidth={2.5} />
+          <ChevronLeft size={24} strokeWidth={2.5} />
         </button>
 
-        <h2 className="text-5xl font-bold text-[#8f1f2f]">{monthLabel}</h2>
+        <h2 className="text-xl font-bold text-[#8f1f2f]">{monthLabel}</h2>
 
         <button
           onClick={goToNextMonth}
-          className="flex h-12 w-12 items-center justify-center text-[#7f1728] hover:scale-110 hover:text-[#a71d2a]"
+          className="flex h-8 w-8 items-center justify-center text-[#7f1728]"
           aria-label="Next month"
         >
-          <ChevronRight size={48} strokeWidth={2.5} />
+          <ChevronRight size={24} strokeWidth={2.5} />
         </button>
       </div>
 
+      {/* Header + grid */}
       <div
         className="relative z-10"
         style={{ boxShadow: "10px 10px 4px 0px rgba(0,0,0,0.25)" }}
@@ -251,9 +261,9 @@ const Calendar = () => {
           {DAYS_OF_WEEK.map((d, index) => (
             <div
               key={d}
-              className={`text-ubi-lightnavy px-0 py-5 text-center text-3xl font-semibold ${
-                index === 0 ? "rounded-tl-[30px]" : ""
-              } ${index === DAYS_OF_WEEK.length - 1 ? "rounded-tr-[30px]" : ""}`}
+              className={`text-ubi-lightnavy py-2 text-center text-xs font-semibold ${
+                index === 0 ? "rounded-tl-xl" : ""
+              } ${index === DAYS_OF_WEEK.length - 1 ? "rounded-tr-xl" : ""}`}
             >
               {d}
             </div>
@@ -261,11 +271,11 @@ const Calendar = () => {
         </div>
 
         {loading ? (
-          <div className="flex h-96 items-center justify-center text-gray-400">
+          <div className="flex h-48 items-center justify-center text-sm text-gray-400">
             Loading calendar events…
           </div>
         ) : error ? (
-          <div className="flex h-96 items-center justify-center px-8 text-center text-red-400">
+          <div className="flex h-48 items-center justify-center px-4 text-center text-sm text-red-400">
             {error}
           </div>
         ) : (
@@ -285,4 +295,4 @@ const Calendar = () => {
   );
 };
 
-export default Calendar;
+export default CalendarMobile;

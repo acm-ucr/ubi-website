@@ -9,21 +9,21 @@ export interface CalendarEvent {
 
 export const getGoogleCalendarEvents = async (
   timeMin: string,
-  timeMax: string
+  timeMax: string,
 ): Promise<CalendarEvent[]> => {
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API_KEY;
   const calendarEmail = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_EMAIL;
 
   if (!apiKey || !calendarEmail) {
     throw new Error(
-      "Google Calendar API key or email not configured. Check environment variables."
+      "Google Calendar API key or email not configured. Check environment variables.",
     );
   }
 
   const url = new URL(
     `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(
-      calendarEmail
-    )}/events`
+      calendarEmail,
+    )}/events`,
   );
   url.searchParams.append("key", apiKey);
   url.searchParams.append("timeMin", timeMin);
@@ -36,7 +36,7 @@ export const getGoogleCalendarEvents = async (
   if (!res.ok) {
     const errorData = await res.json();
     throw new Error(
-      `Google Calendar API error (${res.status}): ${errorData.error?.message || "Unknown error"}`
+      `Google Calendar API error (${res.status}): ${errorData.error?.message || "Unknown error"}`,
     );
   }
 
@@ -44,8 +44,7 @@ export const getGoogleCalendarEvents = async (
   const events = (data.items || []).map((item: any) => ({
     id: item.id,
     title: item.summary || "Untitled Event",
-    start:
-      item.start?.dateTime || item.start?.date || new Date().toISOString(),
+    start: item.start?.dateTime || item.start?.date || new Date().toISOString(),
     end: item.end?.dateTime || item.end?.date || new Date().toISOString(),
     location: item.location,
     description: item.description,
