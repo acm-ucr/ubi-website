@@ -46,7 +46,7 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`bg-ubi-red-100 absolute right-0 w-[35vw] md:hidden ${isOpen ? "block" : "hidden"}`}
+        className={`bg-ubi-red-100 absolute right-0 z-10 w-[35vw] md:hidden ${isOpen ? "block" : "hidden"}`}
       >
         <div className="flex w-full flex-col items-center divide-y font-semibold">
           {navbarMobileLinks.map(({ mlink, mname }, index) => (
