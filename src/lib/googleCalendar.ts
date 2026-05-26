@@ -57,14 +57,17 @@ export const getGoogleCalendarEvents = async (
   }
 
   const data = await res.json();
-  const events = (data.items as GoogleCalendarEventItem[] || []).map((item) => ({
-    id: item.id,
-    title: item.summary || "Untitled Event",
-    start: item.start?.dateTime ?? item.start?.date ?? new Date().toISOString(),
-    end: item.end?.dateTime ?? item.end?.date ?? new Date().toISOString(),
-    location: item.location,
-    description: item.description,
-  }));
+  const events = ((data.items as GoogleCalendarEventItem[]) || []).map(
+    (item) => ({
+      id: item.id,
+      title: item.summary || "Untitled Event",
+      start:
+        item.start?.dateTime ?? item.start?.date ?? new Date().toISOString(),
+      end: item.end?.dateTime ?? item.end?.date ?? new Date().toISOString(),
+      location: item.location,
+      description: item.description,
+    }),
+  );
 
   return events;
 };
