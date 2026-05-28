@@ -7,7 +7,7 @@ const Board = () => {
     <div className="flex flex-col items-center pb-40">
       <Title text="Meet the Board" />
       <Image src={BoardImage} alt="Photo of Board" />
-      <div className="text-ubi-red-200 py-27 text-6xl font-semibold">
+      <div className="text-ubi-red-200 p-20 text-6xl">
         <p>Your Officers</p>
       </div>
       <BoardComp />

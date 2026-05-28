@@ -1,43 +1,101 @@
 import BoardCard from "@/components/board/BoardCard";
-import { BoardCardInfo } from "@/components/board/BoardCardInfo";
+import { BoardCardInfo } from "@/data/BoardCardInfo";
 import Image from "next/image";
 import redBlob from "@/public/assets/redBlob.svg";
 
 const BoardComp = () => {
   return (
-    <div className="relative">
-      <div className="absolute top-0 left-[-60px] flex h-full flex-col justify-around">
-        <Image src={redBlob} alt="blob" className="hidden w-[120px] md:block" />
-        <Image src={redBlob} alt="blob" className="block w-[70px] md:hidden" />
-        <Image src={redBlob} alt="blob" className="hidden w-[120px] md:block" />
+    <div className="relative w-full py-12">
+      <div className="absolute top-36 left-0 -z-10 hidden h-full flex-col justify-between md:flex">
+        <Image src={redBlob} alt="blob" className="w-[10vw] -translate-y-145" />
+        <Image src={redBlob} alt="blob" className="w-[10vw]" />
       </div>
 
-      <div className="absolute top-0 right-[-60px] flex h-full flex-col justify-around">
+      <div className="g-16 absolute top-38 right-0 -z-10 hidden h-full flex-col justify-between md:flex">
+        <div className="flex -translate-y-32 justify-end">
+          <Image
+            src={redBlob}
+            alt="blob"
+            className="w-[8vw] rotate-180 self-start"
+          />
+        </div>
         <Image
           src={redBlob}
           alt="blob"
-          className="hidden w-[120px] scale-x-[-1] md:block"
-        />
-        <Image
-          src={redBlob}
-          alt="blob"
-          className="block w-[70px] scale-x-[-1] md:hidden"
-        />
-        <Image
-          src={redBlob}
-          alt="blob"
-          className="hidden w-[120px] scale-x-[-1] md:block"
+          className="w-[9vw] translate-y-[25px] rotate-180"
         />
       </div>
-      <div className="grid grid-cols-1 gap-x-20 gap-y-16 md:grid-cols-2 md:gap-y-24 lg:grid-cols-3 lg:gap-x-40">
-        {BoardCardInfo.map(({ image, name, position }, index) => (
-          <BoardCard
-            key={index}
-            image={image}
-            name={name}
-            position={position}
+
+      <div className="relative md:hidden">
+        <div className="pointer-events-none absolute inset-0">
+          <Image
+            src={redBlob}
+            alt="blob"
+            className="absolute top-[5%] left-0 w-[14vw]"
           />
-        ))}
+
+          <Image
+            src={redBlob}
+            alt="blob"
+            className="absolute top-[17%] right-0 w-[14vw] scale-x-[-1]"
+          />
+
+          <Image
+            src={redBlob}
+            alt="blob"
+            className="absolute top-[29%] left-0 w-[14vw]"
+          />
+
+          <Image
+            src={redBlob}
+            alt="blob"
+            className="absolute top-[41%] right-0 w-[14vw] scale-x-[-1]"
+          />
+
+          <Image
+            src={redBlob}
+            alt="blob"
+            className="absolute top-[53%] left-0 w-[14vw]"
+          />
+
+          <Image
+            src={redBlob}
+            alt="blob"
+            className="absolute top-[65%] right-0 w-[14vw] scale-x-[-1]"
+          />
+
+          <Image
+            src={redBlob}
+            alt="blob"
+            className="absolute top-[77%] left-0 w-[14vw]"
+          />
+
+          <Image
+            src={redBlob}
+            alt="blob"
+            className="absolute top-[89%] right-0 w-[14vw] scale-x-[-1]"
+          />
+        </div>
+
+        <div className="flex flex-col">
+          {BoardCardInfo.map(({ image, name, position }, index) => (
+            <div key={index} className="flex items-center justify-center py-8">
+              <BoardCard image={image} name={name} position={position} />
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="hidden justify-center md:flex">
+        <div className="grid grid-cols-1 gap-x-20 gap-y-16 md:grid-cols-2 md:gap-y-24 lg:grid-cols-3 lg:gap-x-40">
+          {BoardCardInfo.map(({ image, name, position }, index) => (
+            <BoardCard
+              key={index}
+              image={image}
+              name={name}
+              position={position}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
