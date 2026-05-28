@@ -79,7 +79,7 @@ const ContactUs = () => {
           whileInView="show"
         >
           <div>
-            <p className="font-Poppins text-ubi-blue text-4xl font-bold md:text-6xl">
+            <p className="font-volkhov text-ubi-blue text-center text-5xl font-bold md:text-left md:font-[inherit] md:text-6xl">
               Contact Us
             </p>
             <div className="relative w-0 md:w-full">
