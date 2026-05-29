@@ -77,6 +77,7 @@ const ContactUs = () => {
           transition={{ ...transition, delay: 0.2 }}
           initial="hidden"
           whileInView="show"
+          viewport={{ once: true }}
         >
           <div>
             <p className="font-volkhov text-ubi-blue text-center text-5xl font-bold md:text-left md:font-[inherit] md:text-6xl">
@@ -98,6 +99,7 @@ const ContactUs = () => {
           transition={{ ...transition, delay: 0.4 }}
           initial="hidden"
           whileInView="show"
+          viewport={{ once: true }}
         >
           <div className="absolute inset-0 z-0">
             <Image
@@ -120,6 +122,7 @@ const ContactUs = () => {
                   transition={{ ...transition, delay: 0.5 }}
                   initial="hidden"
                   whileInView="show"
+                  viewport={{ once: true }}
                 >
                   <p className="text-ubi-blue mb-2 ml-1 block font-bold">
                     Full Name
@@ -138,6 +141,7 @@ const ContactUs = () => {
                   transition={{ ...transition, delay: 0.6 }}
                   initial="hidden"
                   whileInView="show"
+                  viewport={{ once: true }}
                 >
                   <p className="text-ubi-blue mb-2 ml-1 block pt-3 font-bold">
                     Email
@@ -156,6 +160,7 @@ const ContactUs = () => {
                   transition={{ ...transition, delay: 0.7 }}
                   initial="hidden"
                   whileInView="show"
+                  viewport={{ once: true }}
                 >
                   <p className="text-ubi-blue mb-2 ml-1 block pt-3 font-bold">
                     Message
