@@ -15,7 +15,7 @@ const BoardCard: React.FC<BoardCardProps> = ({ image, name, position }) => {
       </div>
       <div className="text-ubi-red-200 py-3 md:py-5">
         <p>{name}</p>
-        <div className="text-ubi-red-200 py-2 text-sm md:py-3 md:text-base lg:text-xl">
+        <div className="text-ubi-red-200 py-2 md:py-3 lg:text-xl">
           <p>{position}</p>
         </div>
       </div>
