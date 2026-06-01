@@ -1,5 +1,5 @@
 "use client";
-import {motion} from "motion/react"
+import { motion } from "motion/react";
 interface StatisticsProps {
   donation_num: string;
   donation_text: string;
@@ -19,10 +19,13 @@ const Statistics = ({
 }: StatisticsProps) => {
   return (
     <div className="m-5 flex w-4/5 flex-col items-center justify-center rounded-4xl border border-t-2 border-r-3 border-b-7 border-l-3 border-[#c9aca3] bg-[#fdf9ed] p-4 shadow-md md:w-4/5 md:flex-row">
-      <motion.div viewport={{ once: true, amount: 0.1 }}
+      <motion.div
+        viewport={{ once: true, amount: 0.1 }}
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }} className="flex flex-col items-center py-5 lg:px-15 lg:py-0">
+        transition={{ duration: 0.8 }}
+        className="flex flex-col items-center py-5 lg:px-15 lg:py-0"
+      >
         <div className="text-ubi-red-200 m-5 text-6xl font-black">
           {donation_num}
         </div>
@@ -34,10 +37,13 @@ const Statistics = ({
       <div className="block w-2/3 border-t-3 border-[#beb1b1] md:hidden" />
       <div className="hidden h-24 border-l-3 border-[#beb1b1] md:block" />
 
-      <motion.div viewport={{ once: true, amount: 0.1 }}
+      <motion.div
+        viewport={{ once: true, amount: 0.1 }}
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }} className="flex flex-col items-center py-5 md:px-10 md:py-0">
+        transition={{ duration: 1 }}
+        className="flex flex-col items-center py-5 md:px-10 md:py-0"
+      >
         <div className="text-ubi-red-200 m-5 text-6xl font-black">
           {engage_num}
         </div>
@@ -49,10 +55,13 @@ const Statistics = ({
       <div className="block w-2/3 border-t-3 border-[#beb1b1] md:hidden" />
       <div className="hidden h-24 border-l-3 border-[#beb1b1] md:block" />
 
-      <motion.div viewport={{ once: true, amount: 0.1 }}
+      <motion.div
+        viewport={{ once: true, amount: 0.1 }}
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.4 }} className="flex flex-col items-center py-5 md:py-0 md:pl-15">
+        transition={{ duration: 1.4 }}
+        className="flex flex-col items-center py-5 md:py-0 md:pl-15"
+      >
         <div className="text-ubi-red-200 m-5 text-6xl font-black">
           {bld_drv_num}
         </div>
