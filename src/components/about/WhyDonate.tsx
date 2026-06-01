@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "motion/react";
 import UBILogoTransparent from "@/public/assets/UBI_Logo_TranspBG.svg";
 import Lifestream from "@/public/assets/Lifestream.svg";
 import Border from "@/public/assets/Checker-Border_Mobile.svg";
@@ -11,7 +13,13 @@ const WhyDonate = () => {
         <Image src={Border} alt="border" className="w-full" />
       </div>
 
-      <div className="bg-ubi-pink flex w-[20rem] items-center justify-center rounded-4xl px-6 py-12 shadow-xl shadow-black/20 lg:w-4/5 lg:rounded-2xl">
+      <motion.div
+        viewport={{ once: true, amount: 0.1 }}
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="bg-ubi-pink flex w-[20rem] items-center justify-center rounded-4xl px-6 py-12 shadow-xl shadow-black/20 lg:w-4/5 lg:rounded-2xl"
+      >
         <div className="w-full flex-col text-center lg:w-3/5 lg:pr-12 lg:text-left">
           <p className="font-volkhov text-ubi-blue mb-4 text-5xl font-bold lg:text-6xl">
             Why Donate Blood
@@ -25,11 +33,11 @@ const WhyDonate = () => {
             chronic illness treatment, or surgery. A shortage in the nationwide
             blood supply has strained healthcare systems and even caused delays
             in patient care. By taking less than an hour to donate, you can make
-            a meaningful difference and help sustain your community’s health.
+            a meaningful difference and help sustain your community's health.
           </p>
         </div>
 
-        <div className="bg-ubi-tan flex hidden flex-col items-center justify-between rounded-2xl p-6 shadow-xl lg:block">
+        <div className="bg-ubi-tan hidden flex-col items-center justify-between rounded-2xl p-6 shadow-xl lg:block">
           <div className="flex w-full items-center pb-3">
             <div className="relative h-40 w-40">
               <Image
@@ -66,16 +74,33 @@ const WhyDonate = () => {
                 LifeStream Blood Bank
               </span>
             </div>
-            <Link href="https://www.lstream.org" target="_blank">
-              <button className="border-ubi-red-200 text-ubi-red-200 hover:bg-ubi-red-200 rounded-full border bg-transparent px-4 py-2 text-sm shadow-xl transition-colors hover:text-white">
-                Learn more
-              </button>
-            </Link>
+            <motion.div
+              className="hidden lg:flex lg:w-1/2 lg:justify-end"
+              whileInView={{ scale: [1, 1.05, 1, 1.05, 1] }}
+              transition={{
+                delay: 0.5,
+                duration: 0.8,
+                times: [0, 0.25, 0.5, 0.75, 1],
+              }}
+              viewport={{ once: true, amount: 1 }}
+            >
+              <Link href="https://www.lstream.org" target="_blank">
+                <button className="border-ubi-red-200 text-ubi-red-200 hover:bg-ubi-red-200 rounded-full border bg-transparent px-4 py-2 text-sm shadow-xl transition-colors hover:text-white">
+                  Learn more
+                </button>
+              </Link>
+            </motion.div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="mt-12 flex flex-col items-center rounded-4xl bg-[#FFF6DF] p-6 shadow-xl lg:hidden">
+      <motion.div
+        viewport={{ once: true, amount: 0.1 }}
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="mt-12 flex flex-col items-center rounded-4xl bg-[#FFF6DF] p-6 shadow-xl lg:hidden"
+      >
         <div className="flex w-full items-center pb-3">
           <div className="relative mr-4 h-40 w-[5rem]">
             <Image
@@ -113,12 +138,22 @@ const WhyDonate = () => {
             </span>
           </div>
         </div>
-        <Link href="https://www.lstream.org" target="_blank">
-          <button className="border-ubi-red-200 bg-ubi-pink text-ubi-red-200 active:bg-ubi-red-200 lg:hover:bg-ubi-red-200 mt-6 rounded-full border-4 px-16 py-2 text-xl shadow-xl transition-colors active:text-white lg:hover:text-white">
-            Learn more
-          </button>
-        </Link>
-      </div>
+        <motion.div
+          whileInView={{ scale: [1, 1.05, 1, 1.05, 1] }}
+          transition={{
+            delay: 0.5,
+            duration: 0.8,
+            times: [0, 0.25, 0.5, 0.75, 1],
+          }}
+          viewport={{ once: true, amount: 1 }}
+        >
+          <Link href="https://www.lstream.org" target="_blank">
+            <button className="border-ubi-red-200 bg-ubi-pink text-ubi-red-200 active:bg-ubi-red-200 lg:hover:bg-ubi-red-200 mt-6 rounded-full border-4 px-16 py-2 text-xl shadow-xl transition-colors active:text-white lg:hover:text-white">
+              Learn more
+            </button>
+          </Link>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };
