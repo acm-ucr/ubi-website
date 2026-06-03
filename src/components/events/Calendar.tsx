@@ -144,11 +144,7 @@ const DayCell = ({ day, isCurrentMonth, events }: DayCellProps) => {
     <div
       className={`relative flex aspect-square flex-col overflow-visible border-r border-b border-black p-6 ${!isCurrentMonth ? "bg-[#bfbfbf]" : today ? "bg-[#EAC3C3]" : "bg-white"} `}
     >
-      <span
-        className="mb-1 ml-auto text-sm font-semibold
-          text-rose-900" 
-        
-      >
+      <span className="mb-1 ml-auto text-sm font-semibold text-rose-900">
         {day.getDate()}
       </span>
 
