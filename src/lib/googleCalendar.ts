@@ -7,7 +7,6 @@ export interface CalendarEvent {
   description?: string;
 }
 
-// Raw shape returned by the Google Calendar API per event item
 interface GoogleCalendarEventItem {
   id: string;
   summary?: string;

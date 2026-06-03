@@ -7,8 +7,6 @@ import {
 } from "@/lib/googleCalendar";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// ─── Helpers ──────────────────────────────────────────────────────────────────
-
 const isAllDay = (event: CalendarEvent): boolean => !event.start.includes("T");
 
 const getEventStart = (event: CalendarEvent): Date => {
@@ -63,9 +61,6 @@ const getEventsForDay = (events: CalendarEvent[], day: Date): CalendarEvent[] =>
       return isSameDay(start, day) || (day > start && day <= adjustedEnd);
     })
     .sort((a, b) => getEventStart(a).getTime() - getEventStart(b).getTime());
-
-// ─── Expandable Pill ──────────────────────────────────────────────────────────
-
 interface PillProps {
   event: CalendarEvent;
 }
@@ -95,7 +90,6 @@ const EventPill = ({ event }: PillProps) => {
       onMouseEnter={handleMouseEnterContainer}
       onMouseLeave={handleMouseLeaveContainer}
     >
-      {/* Base pill */}
       <div
         onClick={handleClick}
         className="bg-ubicalendar-red text-ubi-navy flex w-full cursor-pointer items-center justify-between gap-1 overflow-hidden rounded px-1.5 py-0.5 text-[10px] font-extrabold shadow-sm transition-opacity duration-100 active:opacity-70"
@@ -103,7 +97,6 @@ const EventPill = ({ event }: PillProps) => {
         <span className="truncate">{event.title}</span>
       </div>
 
-      {/* Expanded content */}
       {open && (
         <div className="absolute top-0 left-0 z-30 w-full min-w-[140px] overflow-hidden rounded-lg bg-[#ffc9c1] shadow-[4px_6px_0_rgba(0,0,0,0.2)]">
           <div
@@ -132,9 +125,6 @@ const EventPill = ({ event }: PillProps) => {
     </div>
   );
 };
-
-// ─── Day Cell ─────────────────────────────────────────────────────────────────
-
 interface DayCellProps {
   day: Date;
   isCurrentMonth: boolean;
@@ -149,12 +139,12 @@ const DayCell = ({ day, isCurrentMonth, events }: DayCellProps) => {
 
   return (
     <div
-      className={`relative flex min-h-[72px] flex-col overflow-visible border-r border-b border-black p-1 ${!isCurrentMonth ? "bg-slate-300" : today ? "bg-[#E3C4C3]" : "bg-white"} `}
+      className={`relative flex min-h-[72px] flex-col overflow-visible border-r border-b border-black p-1 ${!isCurrentMonth ? "bg-[#bfbfbf]" : today ? "bg-[#EAC3C3]" : "bg-white"} `}
     >
       <span
-        className={`mb-0.5 ml-auto text-[11px] font-semibold ${
-          isCurrentMonth ? "text-rose-900" : "text-gray-400"
-        }`}
+        className="mb-0.5 ml-auto text-[11px] font-semibold
+          text-rose-900"
+        
       >
         {day.getDate()}
       </span>
@@ -170,8 +160,6 @@ const DayCell = ({ day, isCurrentMonth, events }: DayCellProps) => {
     </div>
   );
 };
-
-// ─── CalendarMobile ───────────────────────────────────────────────────────────
 
 const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -231,7 +219,6 @@ const CalendarMobile = () => {
 
   return (
     <div className="w-full px-3 pt-4 pb-6">
-      {/* Month header */}
       <div className="flex items-center justify-center gap-3 py-3">
         <button
           onClick={goToPrevMonth}
@@ -252,7 +239,6 @@ const CalendarMobile = () => {
         </button>
       </div>
 
-      {/* Header + grid */}
       <div
         className="relative z-10"
         style={{ boxShadow: "10px 10px 4px 0px rgba(0,0,0,0.25)" }}
