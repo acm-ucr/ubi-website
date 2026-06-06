@@ -1,7 +1,9 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import HeartPump from "@/public/assets/Heart-Pump.svg";
 import ErrorHeart from "@/public/assets/mobile_error.svg";
+import { motion } from "motion/react";
 interface errorProps {
   toptext: string;
   bottext: string;
@@ -9,7 +11,13 @@ interface errorProps {
 
 const ErrorMessage = ({ toptext, bottext }: errorProps) => {
   return (
-    <div className="relative flex min-h-[91vh] items-center justify-center overflow-hidden">
+    <motion.div
+      viewport={{ once: true, amount: 0.1 }}
+      initial={{ opacity: 0, y: -20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      className="relative flex min-h-[91vh] items-center justify-center overflow-hidden"
+    >
       <Image
         src={HeartPump}
         alt="Red heart shaped pump decoration"
@@ -42,7 +50,7 @@ const ErrorMessage = ({ toptext, bottext }: errorProps) => {
           Go Home
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
