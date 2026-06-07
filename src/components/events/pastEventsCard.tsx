@@ -11,11 +11,7 @@ interface EventCardProps {
   description: ReactNode;
 }
 
-export default function EventCard({
-  image,
-  title,
-  description,
-}: EventCardProps) {
+const EventCard = ({ image, title, description }: EventCardProps) => {
   const [flipped, setFlipped] = useState(false);
 
   return (
@@ -54,4 +50,6 @@ export default function EventCard({
       </div>
     </div>
   );
-}
+};
+
+export default EventCard;
