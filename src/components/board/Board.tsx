@@ -1,15 +1,28 @@
+"use client";
 import BoardCard from "@/components/board/BoardCard";
 import { BoardCardInfo } from "@/data/BoardCardInfo";
 import Image from "next/image";
+import { motion } from "motion/react";
 import redBlob from "@/public/assets/redBlob.svg";
 import BoardImage from "@/public/board/Board-Group.svg";
+
+const cardAnimation = {
+  initial: { opacity: 0, y: -30, scale: 0.5 },
+  whileInView: { opacity: 1, y: 0, scale: 1 },
+  whileHover: { scale: 1.04 },
+  transition: { duration: 0.4 },
+};
+
+const MotionImage = motion.create(Image);
 
 const BoardComp = () => {
   return (
     <div className="relative flex w-full flex-col items-center justify-center pt-12">
-      <Image
+      <MotionImage
         src={BoardImage}
         alt="Photo of Board"
+        whileHover={{ scale: 1.04 }}
+        transition={{ duration: 0.4 }}
         className="-mt-10 w-5/6 md:w-2/3"
       />
       <div className="text-ubi-red-200 text-extrabold p-20 text-4xl md:text-6xl">
@@ -84,12 +97,19 @@ const BoardComp = () => {
       </div>
       <div className="grid grid-cols-1 gap-x-20 gap-y-16 md:grid-cols-2 md:gap-y-24 lg:grid-cols-3 lg:gap-x-40">
         {BoardCardInfo.map(({ image, name, position }, index) => (
-          <BoardCard
+          <motion.div
             key={index}
-            image={image}
-            name={name}
-            position={position}
-          />
+            {...cardAnimation}
+            viewport={{ once: true, amount: 0.3 }}
+            className="w-full cursor-pointer"
+          >
+            <BoardCard
+              key={index}
+              image={image}
+              name={name}
+              position={position}
+            />
+          </motion.div>
         ))}
       </div>
     </div>

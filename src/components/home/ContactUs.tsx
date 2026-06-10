@@ -55,10 +55,10 @@ const ContactUs = () => {
 
     try {
       await emailjs.sendForm(
-        "SERVICE_ID",
-        "TEMPLATE_ID",
+        "service_cprlbbg",
+        "template_kak73mc",
         formRef.current!,
-        "PUBLIC_KEY",
+        "HqdlyTCovjWcjnDoE",
       );
       setIsSubmitted(true);
     } catch (error) {
