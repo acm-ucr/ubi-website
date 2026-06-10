@@ -6,10 +6,10 @@ import EventCard from "./pastEventsCard";
 const PastEvents = () => {
   return (
     <div className="mb-35 flex w-full flex-col items-center">
-      <div className="font-volkhov text-ubi-blue pb-30 text-6xl font-black">
+      <div className="font-volkhov text-ubi-blue hidden pb-30 text-6xl font-black md:flex">
         <p>PAST EVENTS</p>
       </div>
-      <div className="flex flex-row">
+      <div className="hidden flex-row md:flex">
         <EventCard
           image={Paint}
           title="Paint, Petals, and Pints!"
