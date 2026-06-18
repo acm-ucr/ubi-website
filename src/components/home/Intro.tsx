@@ -17,7 +17,11 @@ const Intro = () => {
     <div className="flex w-full justify-center pt-7 md:items-center md:justify-center lg:flex-row">
       <div className="flex w-full flex-col items-center text-center lg:-mt-20 lg:w-1/2 lg:items-start lg:pl-20 lg:text-left">
         <motion.div {...fadeText(0)}>
-          <Image src={Logo} alt="logo" className="w-1/3 lg:w-auto" />
+          <Image
+            src={Logo}
+            alt="logo"
+            className="mx-auto w-3/5 pb-2 lg:w-auto"
+          />
         </motion.div>
 
         <motion.p
