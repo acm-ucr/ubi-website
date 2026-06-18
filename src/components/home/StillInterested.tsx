@@ -1,24 +1,30 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import SquaresHorizontal from "@/public/assets/Checker-Border_Mobile.svg";
 import Squares from "@/public/assets/vertical_checker.svg";
 import { motion } from "motion/react";
 
 const StillInterest = () => {
   return (
-    <div className="relative flex w-full flex-col items-center">
+    <div className="relative flex w-full mt-10 flex-col items-center">
       <Image
-        src={Squares}
-        alt="Three red vertical squares"
-        className="absolute -top-4 left-0 w-[3.2vw]"
+        src={SquaresHorizontal}
+        alt="Horizontal Square Border"
+        className="absolute -top-20 w-full md:hidden"
       />
       <Image
         src={Squares}
         alt="Three red vertical squares"
-        className="absolute -top-4 right-0 w-[3.2vw]"
+        className="absolute -top-4 left-0 hidden w-[3.2vw] md:block"
+      />
+      <Image
+        src={Squares}
+        alt="Three red vertical squares"
+        className="absolute -top-4 right-0 hidden w-[3.2vw] md:block"
       />
 
-      <p className="text-ubi-blue font-volkhov flex flex-col justify-center py-5 text-center text-[6.5vw] font-bold tracking-wider">
+      <p className="text-ubi-blue font-volkhov flex w-3/4 flex-col justify-center py-5 text-center text-4xl font-bold tracking-wider md:w-full md:text-[6.5vw]">
         Still Interested?
       </p>
 
@@ -27,30 +33,33 @@ const StillInterest = () => {
         viewport={{ once: true }}
         whileInView={{ scale: 1 }}
         transition={{ duration: 0.5 }}
-        className="bg-ubi-rose top-[90%] h-min w-min justify-self-center rounded-4xl shadow-xl shadow-black/20"
+        className="bg-ubi-rose top-[90%] h-min w-3/4 justify-self-center rounded-4xl shadow-xl shadow-black/20 md:w-min"
       >
-        <p className="text-ubi-darkred-100 px-18 pt-7 pb-4 text-left text-[4vw] font-extrabold tracking-wide">
-          Visit our Parent Organization
-        </p>
-        <hr className="border-ubi-blue mx-18 w-[68vw] justify-self-center border-t-4 pb-5"></hr>
-        <p className="text-ubi-darkred-100 font-volkhov px-20 text-left text-[2vw] font-extrabold">
-          University Blood{" "}
-          <span className="text-ubiboard-red-300">Initiative</span>
-        </p>
-        <div className="flex">
-          <p className="text-ubi-blue w-[45vw] px-20 pt-2 pb-8 text-[2vw] text-wrap">
-            Empowers a next generation of diverse blood donors and advocates.
-          </p>
-          <motion.div whileHover={{ scale: 1.05 }}>
-            <Link
-              href="https://www.universitybloodinitiative.org/"
-              target="_blank"
-              className="bg-ubi-tan text-ubi-blue border-ubi-blue my-4 mb-15 justify-end rounded-3xl border-4 px-15 pt-5 pb-4 text-center text-[3vw] font-bold drop-shadow-xl"
-            >
-              Learn more
-            </Link>
-          </motion.div>
-        </div>
+        <p className="text-ubi-darkred-100 md:px-18 text-center pt-7 pb-4 md:text-left text-[6vw] font-extrabold tracking-wide md:text-[4vw]">
+  Visit our Parent Organization
+</p>
+<hr className="border-ubi-blue mx-18 w-[68vw] justify-self-center border-t-4 pb-5"></hr>
+<p className="text-ubi-darkred-100 font-volkhov md:px-20 text-center mr-5 md:text-left text-[4vw] font-extrabold md:text-[2vw]">
+  University Blood{" "}
+  <span className="text-ubiboard-red-300">Initiative</span>
+</p>
+<div className="flex flex-col md:flex-row">
+  <p className="text-ubi-blue md:w-[45vw] md:px-20 px-10 pt-2 md:pb-8 text-[3.5vw] text-wrap md:text-[2vw]">
+    Empowers a next generation of diverse blood donors and advocates.
+  </p>
+  <motion.div
+    whileHover={{ scale: 1.05 }}
+    className="flex justify-center md:block"
+  >
+    <Link
+      href="https://www.universitybloodinitiative.org/"
+      target="_blank"
+      className="bg-ubi-tan text-ubi-blue border-ubi-blue my-4 mb-8 md:mb-15 rounded-3xl md:border-4 border-2 px-5 py-1 md:pt-5 md:pb-4 text-center text-[4.5vw] font-bold shadow-xl shadow-black/20 md:px-15 md:text-[3vw]"
+    >
+      Learn more
+    </Link>
+  </motion.div>
+</div>
       </motion.div>
     </div>
   );
