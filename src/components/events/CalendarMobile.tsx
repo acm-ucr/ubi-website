@@ -46,7 +46,8 @@ const buildCalendarGrid = (year: number, month: number): Date[] => {
 
   for (let i = firstDay - 1; i >= 0; i--) days.push(new Date(year, month, -i));
   for (let d = 1; d <= daysInMonth; d++) days.push(new Date(year, month, d));
-  const remaining = 42 - days.length;
+  const totalSlotsNeeded = days.length <= 35 ? 35 : 42;
+  const remaining = totalSlotsNeeded - days.length;
   for (let d = 1; d <= remaining; d++) days.push(new Date(year, month + 1, d));
 
   return days;
