@@ -14,8 +14,8 @@ const fadeText = (delay: number) => ({
 
 const Intro = () => {
   return (
-    <div className="flex w-full justify-center pt-7 md:items-center md:justify-center lg:flex-row">
-      <div className="flex w-full flex-col items-center text-center lg:-mt-20 lg:w-1/2 lg:items-start lg:pl-20 lg:text-left">
+    <div className="flex w-full justify-center pt-7 md:justify-between lg:flex-row">
+      <div className="flex w-full flex-col items-center text-center lg:w-1/2 lg:items-start lg:pl-20 lg:text-left">
         <motion.div {...fadeText(0)}>
           <Image
             src={Logo}
@@ -61,7 +61,7 @@ const Intro = () => {
       </div>
 
       <motion.div
-        className="hidden lg:flex lg:w-1/2 lg:justify-end"
+        className="-z-10 hidden lg:flex lg:w-fit lg:justify-end"
         whileInView={{ scale: [1, 1.05, 1, 1.05, 1] }}
         transition={{ duration: 0.8, times: [0, 0.25, 0.5, 0.75, 1] }}
         viewport={{ once: true }}

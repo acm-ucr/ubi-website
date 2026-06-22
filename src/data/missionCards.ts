@@ -13,7 +13,7 @@ export const missionCards = [
     text: "Educate",
     image: Educate,
     imageSize: 180,
-    imageClassName: "w-32 lg:w-full",
+    imageClassName: "w-32 lg:w-full lg:ml-5",
   },
   {
     text: "Serve",
