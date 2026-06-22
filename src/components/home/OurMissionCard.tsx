@@ -15,7 +15,7 @@ const MissionCard = ({
   imageClassName,
 }: cardProps) => {
   return (
-    <div className="relative flex h-55 w-60 flex-col items-center lg:h-72 lg:w-90">
+    <div className="relative flex h-55 w-60 flex-col items-center lg:h-72">
       <div className="bg-ubi-tan absolute bottom-0 h-30 w-full rounded-4xl lg:h-42"></div>
       <div className="absolute bottom-6 flex flex-col items-center">
         <div className={imageClassName}>
