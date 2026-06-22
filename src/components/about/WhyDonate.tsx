@@ -18,7 +18,7 @@ const WhyDonate = () => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="bg-ubi-pink flex w-[20rem] items-center justify-center rounded-4xl px-6 py-12 shadow-xl shadow-black/20 lg:w-4/5 lg:rounded-2xl"
+        className="bg-ubi-pink flex items-center justify-center rounded-4xl px-6 py-12 shadow-xl shadow-black/20 w-4/5 lg:rounded-2xl"
       >
         <div className="w-full flex-col text-center lg:w-3/5 lg:pr-12 lg:text-left">
           <p className="font-volkhov text-ubi-blue mb-4 text-5xl font-bold lg:text-6xl">
@@ -99,7 +99,7 @@ const WhyDonate = () => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="mt-12 flex flex-col items-center rounded-4xl bg-[#FFF6DF] p-6 shadow-xl lg:hidden"
+        className="mt-12 flex flex-col items-center rounded-4xl w-4/5 bg-[#FFF6DF] p-6 shadow-xl lg:hidden"
       >
         <div className="flex w-full items-center pb-3">
           <div className="relative mr-4 h-40 w-[5rem]">

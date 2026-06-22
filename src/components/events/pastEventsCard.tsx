@@ -20,6 +20,7 @@ const EventCard = ({ image, title, description }: EventCardProps) => {
         <motion.div
           onClick={() => setFlipped((p) => !p)}
           animate={{ rotateY: flipped ? 180 : 0 }}
+          whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
           transition={{ duration: 0.6 }}
           style={{ transformStyle: "preserve-3d" }}
           className="relative flex w-full flex-col items-center"
@@ -41,7 +42,7 @@ const EventCard = ({ image, title, description }: EventCardProps) => {
               zIndex: flipped ? 2 : 1,
             }}
           >
-            <div className="text-ubi-blue h-full w-5/7 rounded-4xl bg-[#FFCDC5] p-16 py-20 text-left text-3xl font-medium shadow-xl">
+            <div className="text-ubi-blue h-full w-5/7 rounded-4xl bg-[#FFCDC5] p-16 py-20 text-left text-xl font-medium shadow-xl">
               <p className="text-5xl font-bold">About Event</p>
               <div className="">{description}</div>
             </div>
