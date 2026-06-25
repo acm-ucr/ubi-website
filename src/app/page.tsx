@@ -1,7 +1,15 @@
+import Intro from "@/components/home/Intro";
+import OurMission from "@/components/home/OurMission";
+import Interest from "@/components/home/StillInterested";
+import ContactUs from "@/components/home/ContactUs";
+
 const Home = () => {
   return (
-    <div className="flex h-screen w-screen items-center justify-center">
-      Hello World
+    <div className="flex h-min flex-col items-center justify-center gap-20 pb-20">
+      <Intro />
+      <OurMission />
+      <Interest />
+      <ContactUs />
     </div>
   );
 };

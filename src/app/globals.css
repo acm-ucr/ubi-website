@@ -1,12 +1,26 @@
+@import "@fontsource/poppins";
 @import "tailwindcss";
+@import "@fontsource/volkhov";
 
 @theme {
-  --color-ubi-navy-500: #212E6F;
-  --color-ubi-red-600: #BB2A28;
-  --color-ubi-red-400: #E8322D;
-  --color-ubi-peach-100: #FBDDD0;
-  --color-ubi-cream-100: #FEF8E5;
+  --color-ubi-tan: #f7f0dd;
+  --color-ubi-red-100: #da3d2c;
+  --color-ubi-red-200: #e7352f;
+  --color-ubiboard-red-300: #ed4041;
+  --color-ubi-darkred-100: #8e1c1b;
+  --color-ubicalendar-red: #ed4c5c;
+  --color-ubi-lightpink: #f5dfcf;
+  --color-ubi-pink: #ffcdc58a;
+  --color-ubi-white: #ffffff;
+  --color-ubi-blue: #212e6f;
+  --color-ubi-navy: #151539;
+  --color-ubi-rose: #fbddd0;
+  --color-ubi-tan: #fdf2e0;
+  --color-ubi-lighttan: #fcf0de;
+  --color-ubi-lightnavy: #202d70;
+  --font-volkhov: "Volkhov", serif;
+}
 
-  --font-ubi-main: 'Poppins', sans-serif;
-  --font-ubi-alt: 'Volkhov', serif;
+body {
+  font-family: "Poppins", sans-serif;
 }

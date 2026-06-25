@@ -12,11 +12,12 @@
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 
 ## Figma
-(https://www.figma.com/design/S7MLcuwxHX7OIOPof1ppIl/UBI-Winter--26?node-id=0-1&p=f)
+
+[UBI Figma Link](https://www.figma.com/design/S7MLcuwxHX7OIOPof1ppIl/UBI-Winter--26?node-id=0-1&p=f&t=GSc22EVF8SuOHo8S-0)
 
 ## Node.js
 
-UBI Website Template runs on Node.js Version 20.10.0 and higher. Please ensure you have Node.js installed via the [official website](https://nodejs.org/en).
+UBI Website runs on Node.js Version 20.10.0 and higher. Please ensure you have Node.js installed via the [official website](https://nodejs.org/en).
 
 ## Next.js
 
